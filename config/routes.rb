@@ -4,8 +4,12 @@ RedditClone::Application.routes.draw do
     resources :comments
   end
 
-  resources :users do
+  resources :user do
     resources :comments
+  end
+
+  namespace :admin do
+    resources :users
   end
 
   root :to => 'posts#index'
