@@ -8,7 +8,7 @@ RedditClone::Application.routes.draw do
     resources :comments
   end
 
-  root :to => 'users#index'
+  root :to => 'posts#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
