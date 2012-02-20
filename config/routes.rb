@@ -4,6 +4,10 @@ RedditClone::Application.routes.draw do
     resources :comments
   end
 
+  resources :users do
+    resources :comments
+  end
+
   root :to => 'users#index'
   
   # The priority is based upon order of creation:
