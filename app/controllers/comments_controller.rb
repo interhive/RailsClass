@@ -1,5 +1,13 @@
 class CommentsController < ApplicationController
 
+  def index
+    @comments = Comment.all
+    
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def create
     @post    = Post.find(params[:post_id])
     @comment = @post.comments.build(params[:comment])
