@@ -4,8 +4,8 @@ RedditClone::Application.routes.draw do
     resources :comments
   end
 
-  resources :user, only: [:index, :show, :edit, :update, :destroy] do
-    collection do
+  resource :user, only: [:index, :show, :edit, :update, :destroy] do
+    member do
       get 'comments'
       get 'posts'
     end
