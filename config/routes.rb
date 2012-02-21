@@ -4,8 +4,8 @@ RedditClone::Application.routes.draw do
     resources :comments
   end
 
-  resources :user, :only => [ :index, :show, :edit, :update, :destroy ] do
-    resources :comments
+  resources :user, only: [ :index, :show, :edit, :update, :destroy ] do
+    resources :comments, only: [ :create ]
   end
 
   namespace :admin do
