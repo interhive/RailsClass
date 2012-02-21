@@ -24,6 +24,9 @@ gem 'jquery-rails'
 
 gem 'haml-rails'
 
+# Use the Thin webserver instead of Webrick
+gem 'thin'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
