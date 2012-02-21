@@ -20,4 +20,11 @@ class UserController < ApplicationController
   
   end
 
+  def comments
+  
+  end
+  
+  def posts
+  
+  end
 end
