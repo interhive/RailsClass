@@ -25,7 +25,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-  
+    # there should be an option to delete the user (along with associated posts/comments) or move to an inactive state (default)
   end
 
 end
