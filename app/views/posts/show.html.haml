@@ -1,1 +1,23 @@
 %h1 Individual Post
+
+%section.post
+  %h2= @post.title
+  %p
+    Posted by:
+    = @post.user.name
+  %p= @post.url
+
+%hr
+
+%section.comments
+  %h2 Comments:
+  - if @post.comments.any?
+    = render @post.comments
+  - else
+    %p There are no comments for this post.
+
+  %h3 Post a comment:
+  %div.comment_form= render 'comments/form'
+
+%section.actions
+  = link_to 'back to all posts', posts_path

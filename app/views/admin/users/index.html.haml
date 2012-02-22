@@ -1,1 +1,10 @@
-%h1 Admin :: Users
+%h1 User Management
+
+%section
+  %h2 Current Users:
+  - if @users.any?
+    = render @users
+  - else
+    %p There are no users.
+
+  = link_to 'Create a New User', new_admin_user_path

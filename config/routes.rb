@@ -5,10 +5,18 @@ RedditClone::Application.routes.draw do
   end
 
   resource :user, only: [:show, :edit, :update, :destroy] do
-    member do
-      get 'comments'
-      get 'posts'
-    end
+    # not sure if we want child members here or resources
+    #member do
+    #  get 'comments'
+    #  get 'posts'
+    #end
+    
+    #get 'comments', on: :member, only: [:index, :show]
+    #get 'posts', on: :member, only: [:index, :show]
+    
+    resources :comments, :posts, only: [:index, :show]
+    
+    # resources :comments, only: [:index, :show], controller: :users
   end
 
   namespace :admin do

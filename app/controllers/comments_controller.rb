@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
 
   def index
+    # must have logic to determine whether we're showing an individual user's comments
+
     @comments = Comment.all
     
     respond_to do |format|
@@ -21,11 +23,11 @@ class CommentsController < ApplicationController
   end
 
   def show
-  
+    # must have logic to determine whether we're showing an individual user's comment  
   end
 
   def edit
-  
+
   end
 
   def new

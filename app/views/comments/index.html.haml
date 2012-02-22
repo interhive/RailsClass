@@ -1,1 +1,7 @@
 %h1 Comments for Current User
+
+%section
+  - if !@comments.blank?
+    = render @comments
+  - else
+    %p You have not left any comments (yet).

@@ -1,0 +1,18 @@
+%section
+  = form_for [@post, @post.comments.build] do |f|
+    - if @comment.errors.any?
+      %div#error_explanation
+        %h2
+          = pluralize(@comment.errors.count, 'error')
+          prohibited this comment from being saved:
+        %ul
+          - @comment.errors.full_messages.each do |msg|
+            %li= msg
+    %div.field
+      = f.label   :user
+      = f.select  :user_id, User.all.collect {|u| [u.name, u.id]}, prompt: 'Select User...'
+    %div.field
+      = f.label       :body
+      = f.text_field  :body
+    %div.actions
+      = f.submit

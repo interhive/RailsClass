@@ -1,1 +1,10 @@
 %h1 Posts
+
+%section.actions
+  = link_to 'New Post', new_post_path
+
+%section
+  - if @posts.any?
+    = render @posts
+  - else
+    %p There are no posts yet.

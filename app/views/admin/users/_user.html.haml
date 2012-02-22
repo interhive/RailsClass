@@ -1,0 +1,10 @@
+%div
+  %p
+    %span.name= user.name
+    %span.email= user.email
+    %span.actions
+      = link_to 'show', admin_user_path(user)
+      |
+      = link_to 'edit', edit_admin_user_path(user)
+      |
+      = link_to 'destroy', admin_user_path, confirm: 'Are you sure?', method: :delete
