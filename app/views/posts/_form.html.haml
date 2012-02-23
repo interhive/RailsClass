@@ -15,6 +15,6 @@
     = f.text_field  :url
   %div.field
     = f.label       :user
-    = f.select :user_id, User.all.collect {|u| [ u.name, u.id ] }, prompt: 'Select User'
+    = f.select :user_id, User.all.collect {|u| [ u.name, u.id ] }, prompt: 'Select User...'
   %div.actions
     = f.submit
