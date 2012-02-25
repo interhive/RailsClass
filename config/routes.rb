@@ -1,7 +1,7 @@
 RedditClone::Application.routes.draw do
 
   resources :posts do
-    resources :comments
+    resources :comments, only: [:create, :index]
   end
 
   resource :user, only: [:show, :edit, :update, :destroy] do

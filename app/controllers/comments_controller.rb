@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(params[:comment])
 
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to @post
     else
       flash[:error] = "We were unable to process or save your comment"
       redirect_to post_path(@post)
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    # must have logic to determine whether we're showing an individual user's comment  
+    # must have logic to determine whether we're showing an individual user's comment
   end
 
   def edit
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
   end
 
   def new
-  
+    @comment = Comment.new
   end
 
   def update

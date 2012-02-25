@@ -35,14 +35,16 @@ class PostsController < ApplicationController
   end
 
   def update
+    # not sure if this is the 'right way' but it works...
     @post = Post.find(params[:id])
+    @comment = Comment.new(params[:post][:comments_attributes])
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to post_path, notice: 'Post was successfully updated.' }
+      if @comment.save
+        format.html { redirect_to post_path, notice: 'Comment was successfully added.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "show" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
